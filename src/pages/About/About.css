@@ -1,0 +1,136 @@
+.about-page {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.about-hero {
+  height: 60vh;
+  background: linear-gradient(to right, #e6f9ec, #f5fff7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #0f5f38;
+  text-align: center;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+}
+
+.about-hero p {
+  font-size: 1.3rem;
+  margin-top: 15px;
+}
+
+/* SECTION BASE */
+.about-section {
+  padding: 80px 10%;
+  transition: all 1s ease;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.about-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOUNDER */
+.founder-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.founder-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: scale(0);
+  animation: popIn 1s forwards;
+}
+
+.founder-text h2 {
+  color: #1b8c4c;
+  margin-bottom: 20px;
+}
+
+/* CAMPUS */
+.campus-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.campus-img {
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform 0.6s ease;
+}
+
+.campus-img:hover {
+  transform: scale(1.05);
+}
+
+/* LOCATION */
+.location-container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.map-container iframe {
+  width: 400px;
+  height: 300px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* FACULTIES */
+.faculties-section {
+  text-align: center;
+}
+
+.faculties-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  border-radius: 30px;
+  border: none;
+  background-color: #1b8c4c;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.faculties-btn:hover {
+  background-color: #146b38;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes popIn {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .founder-container,
+  .campus-container,
+  .location-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .map-container iframe {
+    width: 100%;
+  }
+}
