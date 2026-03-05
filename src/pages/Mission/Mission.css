@@ -1,0 +1,197 @@
+.vision-wrapper {
+  --mission-bg: #ecf4ef;
+  --mission-ink: #12251c;
+  --mission-deep: #0f5e3c;
+  --mission-card: #ffffff;
+  --mission-border: #d4e5d9;
+
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 14%, #d9eee2 0, transparent 28%),
+    radial-gradient(circle at 88% 22%, #dde7e1 0, transparent 24%),
+    var(--mission-bg);
+  color: var(--mission-ink);
+  padding: 80px 6% 90px;
+  font-family: "Poppins", sans-serif;
+}
+
+.vision-bg-shape {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.vision-bg-shape-one {
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(15, 94, 60, 0.16);
+  top: -120px;
+  right: -80px;
+}
+
+.vision-bg-shape-two {
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(15, 94, 60, 0.16);
+  bottom: -110px;
+  left: -70px;
+}
+
+.vision-shell {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.vision-wrapper.show .vision-shell {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-header {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.vision-kicker {
+  margin: 0 0 10px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: #1e6443;
+}
+
+.vision-header h2 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  color: #163a29;
+}
+
+.card-fade {
+  animation: cardRise 0.6s ease both;
+}
+
+.vision-anchor,
+.beacon,
+.mission-node {
+  background: var(--mission-card);
+  border: 1px solid var(--mission-border);
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(16, 46, 30, 0.08);
+}
+
+.vision-anchor {
+  padding: 28px;
+  text-align: center;
+}
+
+.card-label {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #e1f2e8;
+  color: #155238;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.vision-anchor p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.mission-track {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mission-node {
+  padding: 22px;
+  position: relative;
+}
+
+.node-index {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  background: linear-gradient(130deg, #0e5f3d, #0c3f2b);
+  color: #f4fff8;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.mission-node p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.beacon {
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(140deg, #103d2b, #0e5f3d);
+  border-color: #155238;
+}
+
+.beacon .card-label {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ebfff4;
+}
+
+.beacon h3 {
+  margin: 0;
+  color: #f3fff8;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .mission-track {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .vision-wrapper {
+    padding: 56px 5% 64px;
+  }
+
+  .vision-anchor,
+  .mission-node,
+  .beacon {
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  .vision-anchor p {
+    font-size: 1.05rem;
+  }
+}

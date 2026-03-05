@@ -1,42 +1,34 @@
 import { useEffect, useState } from "react";
-import studentImage from "../../assets/images/student.png";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
+import campusPlanImage from "../../assets/images/fardousCampus.png";
 
 function Home() {
-  const [show, setShow] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(true);
-    }, 300);
-
+    const timer = setTimeout(() => setLoaded(true), 180);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section className="hero">
-      <div className={`hero-content ${show ? "content-show" : ""}`}>
-        <h1 className="title">
-          Al Fardous University
-        </h1>
+    <section className="home">
+      <div className="home-plan-bg" aria-hidden="true">
+        <img src={campusPlanImage} alt="" />
+      </div>
+      <div className="home-shade" aria-hidden="true"></div>
 
-        <p className="tagline">
-          Where Ambition Meets Excellence
-        </p>
+      <div className={`home-shell ${loaded ? "show" : ""}`}>
+        <span className="badge">Under Establishment</span>
+        <h1>Al-Fardous University</h1>
+        <p>Under establishment in Al-Fayoum.</p>
 
-        <span className="launch">
-          Launching 2027
-        </span>
-
-        <div className="buttons">
-          <button className="cta-button">
-            Join the Early Interest List
+        <div className="home-actions">
+          <button type="button" className="outline-btn" onClick={() => navigate("/about")}>
+            Discover More
           </button>
         </div>
-      </div>
-
-      <div className={`hero-image ${show ? "image-show" : ""}`}>
-        <img src={studentImage} alt="Student" />
       </div>
     </section>
   );

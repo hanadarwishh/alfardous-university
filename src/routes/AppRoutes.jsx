@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "../pages/Home/Home.jsx";
 import About from "../pages/About/About.jsx";
-// import Mission from "../pages/Mission/Mission.jsx";
+import Mission from "../pages/Mission/Mission.jsx";
 import Faculties from "../pages/Faculties/Faculties.jsx";
 // import Timeline from "../pages/timeline/Timeline.jsx"
 
@@ -17,7 +17,7 @@ function AppRoutes() {
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/admissions" element={<Mission />} /> */}
+        <Route path="/mission" element={<Mission />} />
         <Route path="/faculties" element={<Faculties />} />
         {/* <Route path="/timeline" element={<Timeline />} /> */}
 

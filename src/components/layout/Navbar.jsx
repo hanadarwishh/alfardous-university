@@ -18,8 +18,8 @@ function Navbar() {
           <a href="/about">About</a>
           <a href="/faculties">Faculties</a>
           <a href="/mission">Mission</a>
-          <a href="/contact">Contact</a>
-          <span className="launch-badge">Launching 2027</span>
+          {/* <a href="/contact">Contact</a> */}
+          <span className="launch-badge">Launching 2026</span>
         </nav>
 
         <div
