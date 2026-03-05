@@ -69,6 +69,7 @@
   margin: 0;
   color: #d2ebdf;
   font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .home-actions {
@@ -94,5 +95,14 @@
 @media (max-width: 700px) {
   .home {
     padding: 40px 5%;
+  }
+
+  .home-shell p {
+    font-size: 0.98rem;
+  }
+
+  .outline-btn {
+    width: 100%;
+    max-width: 280px;
   }
 }

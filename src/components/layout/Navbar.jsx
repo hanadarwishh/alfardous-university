@@ -6,25 +6,33 @@ import "./Navbar.css";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className="navbar">
       <div className="nav-container">
-        <div className="logo">
+        <Link to="/" className="logo" onClick={closeMenu}>
           <img src={logo} alt="Al Fardous University Logo" />
           <span>Al Fardous University</span>
-        </div>
+        </Link>
+
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          {menuOpen ? "Close" : "Menu"}
+        </button>
 
         <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/faculties">Faculties</Link>
-          <Link to="/mission">Mission</Link>
+          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/about" onClick={closeMenu}>About</Link>
+          <Link to="/faculties" onClick={closeMenu}>Faculties</Link>
+          <Link to="/mission" onClick={closeMenu}>Mission</Link>
           <span className="launch-badge">Launching 2026</span>
         </nav>
-
-        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          Menu
-        </div>
       </div>
     </header>
   );
